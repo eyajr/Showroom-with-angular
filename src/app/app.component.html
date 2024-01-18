@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<app-head-bar></app-head-bar>
+<app-auto-list [autos]="Autolist"
+(selectAutoEvent)="updateAuto($event)"></app-auto-list>
+<!-- affichage -->
+<div *ngIf ="selectedAuto">
+  <p>{{selectedAuto.make}}</p>
+  <p>{{selectedAuto.model}}</p>
+  <p>{{selectedAuto.price | currency}} DNT</p>
+  <p>{{selectedAuto.power}} Chevaux </p>
+  <img [src]="selectedAuto.photo"/>
+</div>
